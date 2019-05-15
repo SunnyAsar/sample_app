@@ -10,6 +10,9 @@ gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
+
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server
@@ -52,6 +55,7 @@ group :development, :test do
 end
 group :production do
   gem 'pg'
+  gem 'fog', '1.42'
 end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.

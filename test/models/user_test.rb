@@ -72,4 +72,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
 
+
+
+  test "associated data should be deleted on user delete" do 
+    @user.save
+    @user.microposts.create!(content: "the test post content")
+    assert_difference 'Micropost.count', -1 do
+      @user.destroy
+    end
+  end
+
 end
